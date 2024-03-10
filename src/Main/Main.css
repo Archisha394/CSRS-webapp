@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Koulen";
+  src: url("https://fonts.google.com/specimen/Koulen") format("truetype");
+}
+.number {
+  font-family: Koulen;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -14,13 +21,14 @@
 
 .topbar {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  width: 80%; 
+  width: 80%;
 }
 
-.topbar h1 {
-  margin: 0; 
+.topbar h2 {
+  margin: 0;
+  font-family: Inter;
 }
 
 .topbar ul {
@@ -31,7 +39,6 @@
 }
 
 .topbar ul li {
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
@@ -49,11 +56,12 @@
   color: #000;
   text-decoration: none;
   display: block;
+  margin-top: 0;
 }
 .line {
   width: 85%;
-  border-bottom: 1px solid #776e6e; 
-  margin-bottom: 20px; 
+  border-bottom: 1px solid #776e6e;
+  margin-bottom: 5px;
 }
 .box {
   width: 30%;
@@ -63,7 +71,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 25px;
+  padding-top: 0px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .box-text {

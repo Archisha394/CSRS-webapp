@@ -1,14 +1,17 @@
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal/Modal";
 
 function App() {
   return (
     <div className="app-container">
-      <Navbar /> 
+      <Navbar />
       <div className="main-content">
+        {" "}
         <Main />
       </div>
+      <Modal />
     </div>
   );
 }

@@ -8,7 +8,7 @@ function Main() {
   return (
     <div className="main-container">
       <div className="topbar">
-        <h1>Dashboard</h1>
+        <h2>Dashboard</h2>
         <ul>
           <li>
             <a href="#">
@@ -25,7 +25,15 @@ function Main() {
       <hr className="line" />
       <div className="boxes-container">
         <div className="box">
-          <div style={{ color: "red", fontSize: "110px", fontWeight: "bold" }}>
+          <div
+            className="number"
+            style={{
+              color: "red",
+              fontSize: "110px",
+              fontWeight: "bold",
+              paddingTop: "0px",
+            }}
+          >
             27
           </div>
           <p className="box-text">Total Cases </p>
@@ -37,7 +45,7 @@ function Main() {
           <p className="box-text">High Cases Zone</p>
         </div>
         <div className="box">
-          <div>
+          <div className="number">
             <span
               style={{ color: "red", fontSize: "90px", fontWeight: "bold" }}
             >
@@ -49,7 +57,7 @@ function Main() {
         </div>
       </div>
       <div className="list-container">
-        <h2>Previous Cases</h2>
+        <h2 style={{ margin: "0" }}>Previous Cases</h2>
         <hr className="line" style={{ width: "100%" }} />
         <BasicTable />
       </div>
