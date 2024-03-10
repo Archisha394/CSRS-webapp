@@ -1,12 +1,17 @@
 import Navbar from "./Navbar/Navbar";
-import Main from "./Main/Main";
-import React, { useState } from "react";
-import Modal from "./Modal/Modal";
-
+import React from "react";
+// import react router 
+import { BrowserRouter ,Routes , Route } from "react-router-dom";
+import Login from "./login/login";
 function App() {
   return (
     <div className="app-container">
-      <Navbar />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/"  element={ <Navbar />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      </BrowserRouter>
       <div className="main-content">
         {" "}
         <Main />
