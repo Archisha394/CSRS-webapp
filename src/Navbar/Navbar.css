@@ -42,7 +42,8 @@
 .sidebar ul li a {
   color: #000;
   text-decoration: none;
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 10px;
 }
 

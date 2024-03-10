@@ -1,0 +1,91 @@
+/* Main.css */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 250px;
+}
+
+.boxes-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between; /* Distribute items horizontally */
+  align-items: center;
+  width: 80%; /* Adjust as needed */
+  margin-bottom: 20px; /* Add space between topbar and boxes */
+}
+
+.topbar h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.topbar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.topbar ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.topbar ul li:last-child {
+  margin-left: auto; /* Push last item to the right */
+}
+
+.topbar ul li .icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.topbar ul li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+.line {
+  width: 85%;
+  border-bottom: 1px solid #776e6e; /* Add border-bottom to create a line */
+  margin-bottom: 20px; /* Add some space below the line */
+}
+.box {
+  width: 30%;
+  height: auto;
+  background-color: #efeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+.box-text {
+  font-size: 20px;
+}
+p {
+  margin: 0;
+}
+.list-container {
+  width: 80%;
+}
+
+.list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-container ul li {
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}

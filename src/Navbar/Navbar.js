@@ -11,34 +11,46 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <div className="sidebar">
-      <img src={logo} alt="Logo" className="logo"/>
+      <img src={logo} alt="Logo" className="logo" />
       <ul className="upper-bar">
         <li className="sidebar-items">
-          <img src={homeIcon} alt="Dashboard" className="icon" />
-          <a href="#">Dashboard</a>
+          <a href="#">
+            <img src={homeIcon} alt="Dashboard" className="icon" />
+            Dashboard
+          </a>
         </li>
         <li>
-          <img src={aboutIcon} alt="Profile" className="icon" />
-          <a href="#">Profile</a>
+          <a href="#">
+            <img src={aboutIcon} alt="Profile" className="icon" />
+            Profile
+          </a>
         </li>
         <li>
-          <img src={servicesIcon} alt="Notifications" className="icon" />
-          <a href="#">Notifications</a>
+          <a href="#">
+            <img src={servicesIcon} alt="Notifications" className="icon" />
+            Notifications
+          </a>
         </li>
         <li>
-          <img src={contactIcon} alt="Search" className="icon" />
-          <a href="#">Search</a>
+          <a href="#">
+            <img src={contactIcon} alt="Search" className="icon" />
+            Search
+          </a>
         </li>
       </ul>
       <div className="lower-bar">
         <ul>
           <li>
-            <img src={settingsIcon} alt="Settings" className="icon" />
-            <a href="#">Settings</a>
+            <a href="#">
+              <img src={settingsIcon} alt="Settings" className="icon" />
+              Settings
+            </a>
           </li>
           <li>
-            <img src={logoutIcon} alt="Logout" className="icon" />
-            <a href="#">Logout</a>
+            <a href="#">
+              <img src={logoutIcon} alt="Logout" className="icon" />
+              Logout
+            </a>
           </li>
         </ul>
       </div>
