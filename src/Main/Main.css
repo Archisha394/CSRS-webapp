@@ -26,9 +26,10 @@
   width: 80%;
 }
 
-.topbar h2 {
+h2 {
   margin: 0;
-  font-family: Inter;
+  /* font-family: Inter; */
+  font-size: 30px;
 }
 
 .topbar ul {
