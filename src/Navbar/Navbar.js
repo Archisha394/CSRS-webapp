@@ -10,29 +10,29 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar ">
       <img src={logo} alt="Logo" className="logo" />
       <ul className="upper-bar">
         <li className="sidebar-items">
-          <a href="#">
+          <a href="/">
             <img src={homeIcon} alt="Dashboard" className="icon" />
             Dashboard
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/">
             <img src={aboutIcon} alt="Profile" className="icon" />
             Profile
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/">
             <img src={servicesIcon} alt="Notifications" className="icon" />
             Notifications
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/">
             <img src={contactIcon} alt="Search" className="icon" />
             Search
           </a>
@@ -41,17 +41,17 @@ function Navbar() {
       <div className="lower-bar">
         <ul>
           <li>
-            <a href="#">
+            <a href="/">
               <img src={settingsIcon} alt="Settings" className="icon" />
               Settings
             </a>
           </li>
-          <li>
-            <a href="#">
+          {/* <li>
+            <a href="/">
               <img src={logoutIcon} alt="Logout" className="icon" />
               Logout
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
