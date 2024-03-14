@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from "react";
 import "./Alert.css";
-import photo from "../images/photo.png";
+
 import map from "../images/map.png"
 import { ContactEmergency, PermIdentity, Phone } from "@mui/icons-material";
 import InputModal from "../Modal/InputModal";
@@ -64,6 +65,7 @@ function Alert() {
             <div className="profile">
               {/* <h2>Profile of the student</h2> */}
               <div className="profile-content flex items-center">
+              
                 <img src={alertData.user.imageUrl} alt="Photo" />
                 <div className="mx-3">
                   <p className="font-semibold text-lg ">{alertData.user.username}</p>

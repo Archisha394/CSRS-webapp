@@ -15,7 +15,7 @@ const Case = () => {
     const getEmergenciesData = async () => {
         // localStorage.removeItem('emergenciesData');
         try {
-            
+
             const response = await fetch("http://localhost:5000/emergency/get", {
                 method: 'GET',
                 headers: {
@@ -26,7 +26,7 @@ const Case = () => {
             console.log('response data:', responseData.data);
             setData(responseData.data);
             console.log('data after fetching:', data);
-        
+
 
             const filteredEmergencyData = await responseData.data.filter(item => item._id === id);
             console.log('filtered emergency data:', filteredEmergencyData);
@@ -38,17 +38,17 @@ const Case = () => {
     }
     useEffect(() => {
         getEmergenciesData();
-    } ,[]);
+    }, []);
     useEffect(() => {
         console.log('data after changing:', data);
-    },[data]);
+    }, [data]);
     return (
         <>
             {emergencyData === null || emergencyData.length === 0 ?
                 <h1 className='text-3xl font-bold text-center'>Something went wrong...</h1> :
                 <div className='flex gap-5  p-5 absolute right-0 flex-col items-center bg-slate-00 '>
                     <h1 className='text-3xl  text-center font-extrabold'>Case Details</h1>
-                    <div className='student-details bg-slate-100 flex items-center gap-5 justify-center text-xl mx-10 p-5 shadow-sm shadow-slate-200 rounded-sm relative' style={{ left: '2vw', width:'80vw' }}>
+                    <div className='student-details bg-slate-100 flex items-center gap-5 justify-center text-xl mx-10 p-5 shadow-sm shadow-slate-200 rounded-sm relative' style={{ left: '2vw', width: '80vw' }}>
                         <div className='student-image'>
                             <img src={emergencyData.user.imageUrl} alt="profile" className="w-40 rounded-full" />
                         </div>
@@ -82,12 +82,17 @@ const Case = () => {
                             <p className='m-1 p-2 font-semibold '><span className='text-slate-500'>Time took to resolve : </span> {emergencyData.timeTakenToResolve}</p>
                         </div>
                     </div>
-                    <div className='description  bg-slate-50 p-5 shadow-sm shadow-slate-200 rounded-sm wrapper mx-10 relative ' style={{ width: '80vw' , left:'2vw'}}>
+                    <div className='description  bg-slate-50 p-5 shadow-sm shadow-slate-200 rounded-sm wrapper mx-10 relative ' style={{ width: '80vw', left: '2vw' }}>
                         <p className='text-xl font-semibold capitalize p-1'> more about case </p>
-                        <p className='text-lg font-light py-2 m-1'> An error occurred during a connection to www.fastcompany.com. PR_CONNECT_RESET_ERROR
-                            Error code: PR_CONNECT_RESET_ERROR
-                            The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.
-                            Please contact the website owners to inform them of this problem.</p>
+                        <div className='flex justify-start items-center gap-4'>
+                            <p className='font-semibold text-lg'>Sensitivity :</p>
+                            <p className='text-lg font-light py-2 m-1'>{emergencyData.sensitivity} </p>
+                        </div>
+                        <div className='flex justify-start items-center gap-4'>
+                            <p className='font-semibold text-lg'>Description :</p>
+                            <p className='text-lg font-light py-2 m-1'>{emergencyData.description} </p>
+                        </div>
+
                     </div>
 
 
