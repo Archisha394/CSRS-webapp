@@ -13,7 +13,7 @@ const InputModal = ({ id }) => {
         console.log(value);
         console.log('description:', description);
         e.preventDefault();
-        var response = await fetch('process.env.REACT_APP_API_URL/emergency/update', {
+        var response = await fetch(`${process.env.REACT_APP_API_URL}/emergency/update`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -26,7 +26,7 @@ const InputModal = ({ id }) => {
 
         });
         response = await response.json();
-        var resolve = await fetch('process.env.REACT_APP_API_URL/emergency/resolve', {
+        var resolve = await fetch(`${process.env.REACT_APP_API_URL}/emergency/resolve`, {
             headers: {
                 'Content-Type': 'application/json'
             },

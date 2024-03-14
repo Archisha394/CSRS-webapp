@@ -18,7 +18,7 @@ function Alert() {
     // localStorage.removeItem('emergenciesData');
     try {
 
-      const response = await fetch("process.env.REACT_APP_API_URL/emergency/get", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/emergency/get`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

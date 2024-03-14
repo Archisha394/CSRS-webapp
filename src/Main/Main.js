@@ -14,7 +14,7 @@ function Main() {
         console.log('data from localstorage', data);
       }
       else {
-        fetch("process.env.REACT_APP_API_URL/emergency/get")
+        fetch(`${process.env.REACT_APP_API_URL}/emergency/get`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

@@ -3,6 +3,7 @@
 import { Badge, ContactEmergency, Done, Email, EmailRounded, PendingActions, PermIdentity, Phone } from '@mui/icons-material';
 
 import React, { useEffect, useState } from 'react'
+import Modal from '../Modal/Modal';
 // import Modal from '../Modal/Modal';
 
 const Case = () => {
@@ -16,7 +17,7 @@ const Case = () => {
         // localStorage.removeItem('emergenciesData');
         try {
 
-            const response = await fetch("process.env.REACT_APP_API_URL/emergency/get", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/emergency/get`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -96,7 +97,7 @@ const Case = () => {
 
                 </div>
             }
-            {/* <Modal data={emergencyData} /> */}
+            <Modal data={emergencyData} />
         </>
     )
 }
