@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./login/login";
 import EmergencyCard2 from "./List/Emergencycard";
 import Case from "./Case/case";
-const socket = io('http://localhost:5000');
+const socket = io('process.env.REACT_APP_API_URL');
 
 function App() {
   const [ isModal , setIsModal ] = React.useState(false);

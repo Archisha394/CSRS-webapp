@@ -1,5 +1,5 @@
 import { AccessTime, ArrowForwardIos, DateRangeOutlined, Done, EmailOutlined, HourglassEmpty, PendingActions, PinDrop } from '@mui/icons-material';
-import React, { useState } from 'react'
+import React from 'react'
 
 const EmergencyCard = ({ ImageUrl, Name, RollNo, Landmark, Status, Email, Date, Time, TimeTaken }) => {
     return (

@@ -16,7 +16,7 @@ export default function StickyHeadTable() {
     if (localStorage.getItem("emergenciesData")) {
       setData(JSON.parse(localStorage.getItem("emergenciesData")));
     } else {
-      fetch("http://localhost:5000/emergency/get")
+      fetch("process.env.REACT_APP_API_URL/emergency/get")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

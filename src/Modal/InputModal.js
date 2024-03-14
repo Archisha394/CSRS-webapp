@@ -13,7 +13,7 @@ const InputModal = ({ id }) => {
         console.log(value);
         console.log('description:', description);
         e.preventDefault();
-        var response = await fetch('http://localhost:5000/emergency/update', {
+        var response = await fetch('process.env.REACT_APP_API_URL/emergency/update', {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -26,9 +26,21 @@ const InputModal = ({ id }) => {
 
         });
         response = await response.json();
-        
+        var resolve = await fetch('process.env.REACT_APP_API_URL/emergency/resolve', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'PUT',
+            body: JSON.stringify({
+                id: id
+            })
+
+        }); 
+        resolve = await resolve.json();
+        console.log('emergency resolve:', resolve);
         if(response.status === 'success'){
             alert('updated successfully');
+            localStorage.removeItem('emergenciesData');
             window.location.href = '/';
         }
 

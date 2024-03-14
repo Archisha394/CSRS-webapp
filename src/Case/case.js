@@ -1,9 +1,9 @@
 
-import { Identity } from '@mui/base';
-import { Badge, ContactEmergency, Done, Email, NearMe, PendingActions, PermIdentity, Phone, RollerShades } from '@mui/icons-material';
+// import { Identity } from '@mui/base';
+import { Badge, ContactEmergency, Done, Email, EmailRounded, PendingActions, PermIdentity, Phone } from '@mui/icons-material';
 
 import React, { useEffect, useState } from 'react'
-import Modal from '../Modal/Modal';
+// import Modal from '../Modal/Modal';
 
 const Case = () => {
     // get id from url
@@ -16,7 +16,7 @@ const Case = () => {
         // localStorage.removeItem('emergenciesData');
         try {
 
-            const response = await fetch("http://localhost:5000/emergency/get", {
+            const response = await fetch("process.env.REACT_APP_API_URL/emergency/get", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -26,12 +26,10 @@ const Case = () => {
             console.log('response data:', responseData.data);
             setData(responseData.data);
             console.log('data after fetching:', data);
-
-
             const filteredEmergencyData = await responseData.data.filter(item => item._id === id);
             console.log('filtered emergency data:', filteredEmergencyData);
-
-            setEmergencyData(filteredEmergencyData[0]); // Assuming you want to set the first item from filtered data
+            // convert time to indian time
+            setEmergencyData(filteredEmergencyData[0]); 
         } catch (error) {
             console.log('error:', error);
         }
@@ -40,8 +38,8 @@ const Case = () => {
         getEmergenciesData();
     }, []);
     useEffect(() => {
-        console.log('data after changing:', data);
-    }, [data]);
+        console.log('data after changing:', emergencyData);
+    }, [emergencyData]);
     return (
         <>
             {emergencyData === null || emergencyData.length === 0 ?
@@ -78,7 +76,7 @@ const Case = () => {
                         <div className='case-details '>
                             <p className='m-1 p-2 font-semibold capitalize '><span className='text-slate-500'>Near : </span>{emergencyData.landmark}</p>
                             <p className={`m-1 p-2 font-bold  capitalize ${emergencyData.status === 'resolved' ? 'text-green-400' : 'text-red-500'} `}><span className='text-slate-500'>Status : </span>{emergencyData.status === 'pending' ? < PendingActions /> : <Done />}{emergencyData.status}</p>
-                            <p className='m-1 p-2 font-semibold '><span className='text-slate-500'>Happened On : </span>{emergencyData.createdOn.split("T")[0]} at {emergencyData.createdOn.split("T")[1].split(".")[0]}</p>
+                            <p className='m-1 p-2 font-semibold '><span className='text-slate-500'>Happened On : </span>{emergencyData.createdOn.split("T")[0]} at {emergencyData.createdOn.split("T")[1].split(".")[0]} UTC+00:00</p>
                             <p className='m-1 p-2 font-semibold '><span className='text-slate-500'>Time took to resolve : </span> {emergencyData.timeTakenToResolve}</p>
                         </div>
                     </div>

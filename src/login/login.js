@@ -46,7 +46,7 @@ const Login = () => {
         e.preventDefault();
         if (validateForm()) {
             console.log(formData);
-            fetch('http://localhost:5000/login/admin', {
+            fetch('process.env.REACT_APP_API_URL/login/admin', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
